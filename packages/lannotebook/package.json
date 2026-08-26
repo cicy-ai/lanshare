@@ -1,6 +1,6 @@
 {
   "name": "lannotebook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared LAN notebook: one full-page textarea served over HTTP, autosaved to a file, optional HTTP Basic auth. Thin wrapper around `lanshare note`.",
   "type": "module",
   "bin": { "lannotebook": "bin/lannotebook.js" },
