@@ -1,0 +1,15 @@
+{
+  "name": "lannotebook",
+  "version": "1.0.0",
+  "description": "Shared LAN notebook: one full-page textarea served over HTTP, autosaved to a file, optional HTTP Basic auth. Thin wrapper around `lanshare note`.",
+  "type": "module",
+  "bin": { "lannotebook": "bin/lannotebook.js" },
+  "files": ["bin", "README.md"],
+  "engines": { "node": ">=18" },
+  "dependencies": { "lanshare-cli": "^1.0.0" },
+  "keywords": ["lan", "notebook", "textarea", "share", "basic-auth", "npx"],
+  "repository": { "type": "git", "url": "git+https://github.com/cicy-ai/lanshare.git", "directory": "packages/lannotebook" },
+  "homepage": "https://github.com/cicy-ai/lanshare#readme",
+  "author": "cicy-ai",
+  "license": "MIT"
+}
