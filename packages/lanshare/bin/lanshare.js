@@ -14,7 +14,7 @@ const DB_DIR = path.join(process.env.CICY_HOME || path.join(os.homedir(), 'cicy-
 const STATE_FILE = path.join(DB_DIR, 'lanshare.json');
 
 const HELP = `Usage:
-  lanshare serve <dir> [options]   Share <dir> over HTTP with a directory index
+  lanshare serve [dir] [options]   Share [dir] (default: current directory) over HTTP with a directory index
   lanshare note [file] [options]   Shared LAN notebook: one full-page textarea, autosaved to [file]
   lanshare ip [--json]             Print LAN (private IPv4) addresses
   lanshare status [--json]         Show background servers started with --daemon
@@ -30,6 +30,7 @@ Options for serve / note:
       --json            Print startup info as JSON
 
 Examples:
+  lanshare serve                      # share the current directory
   lanshare serve ~/Downloads
   lanshare serve ./dist -p 9000 -a admin:secret
   lanshare serve /data --daemon && lanshare status
@@ -316,9 +317,7 @@ function startServer(mode, o, { root, makeServer, extra }) {
 }
 
 function cmdServe(o) {
-  const dirArg = o._[1];
-  if (!dirArg) fail('serve needs a directory\n' + HELP);
-  const root = path.resolve(dirArg);
+  const root = path.resolve(o._[1] || process.cwd());
   let st;
   try { st = fs.statSync(root); } catch { fail(`no such directory: ${root}`); }
   if (!st.isDirectory()) fail(`not a directory: ${root}`);

@@ -5,7 +5,8 @@ Installed globally (`npm i -g lanshare-cli`) the commands are plain `lanshare` a
 Zero-dependency LAN file sharing + shared notebook. Node >= 18.
 
 ```sh
-npx lanshare-cli serve ~/Downloads                    # http index on :8080, prints LAN URLs
+npx lanshare-cli serve                                # share current directory on :8080, prints LAN URLs
+npx lanshare-cli serve ~/Downloads                    # explicit directory
 npx lanshare-cli serve ./dist -p 9000 -a admin:secret # custom port + HTTP Basic auth
 npx lanshare-cli serve /data --daemon                 # background; lanshare status / stop
 npx lanshare-cli ip                                   # LAN IPv4 addresses
