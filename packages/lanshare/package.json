@@ -1,6 +1,6 @@
 {
   "name": "lanshare-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Share a directory over HTTP on the LAN with a file index, or host a shared full-page notebook (lannotebook). Optional HTTP Basic auth, prints LAN IPs. Zero dependencies.",
   "type": "module",
   "bin": { "lanshare": "bin/lanshare.js", "lanshare-cli": "bin/lanshare.js", "lannotebook": "bin/lannotebook.js" },

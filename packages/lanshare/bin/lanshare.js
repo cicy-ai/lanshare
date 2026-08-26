@@ -10,7 +10,7 @@ import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const argv = process.argv.slice(2);
-const DB_DIR = path.join(process.env.CICY_HOME || path.join(os.homedir(), 'cicy-ai'), 'db');
+const DB_DIR = path.join(process.env.CICY_HOME || os.homedir(), 'cicy-ai', 'db');
 const STATE_FILE = path.join(DB_DIR, 'lanshare.json');
 
 const HELP = `Usage:
